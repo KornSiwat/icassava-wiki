@@ -4,7 +4,7 @@ This document contains all the necessary information to create icassava wiki. ðŸ
 
 - [Dependencies](#Dependencies)
 - [Configurations](#Configurations)
-- [Backup](#Backup)
+- [Backup](#Backup Configurations)
 - [Help](#Help)
 
 ## Dependencies
@@ -266,7 +266,7 @@ Note: Only first time
   ];
   ```
 
-## Backup
+## Backup Configurations
 
 - Database Backup
 
