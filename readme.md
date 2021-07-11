@@ -4,7 +4,7 @@ This document contains all the necessary information to create icassava wiki. ðŸ
 
 - [Dependencies](#Dependencies)
 - [Configurations](#Configurations)
-- [Backup](#Backup Configurations)
+- [Backup](#Backup)
 - [Help](#Help)
 
 ## Dependencies
@@ -40,7 +40,7 @@ This document contains all the necessary information to create icassava wiki. ðŸ
 | Vector       | [Comes with Mediawiki 1.36.1](https://www.mediawiki.org/wiki/Skin:Vector) | wfLoadSkin( 'Vector' ); <br> $wgDefaultSkin = "Vector";                  |
 | Minerva Neue | [20711d8](https://www.mediawiki.org/wiki/Skin:Minerva_Neue)               | wfLoadSkin( 'MinervaNeue' ); <br> $wgMFDefaultSkinClass = 'SkinMinerva'; |
 
-## Backup
+## Backup Tools
 
 | Name   | Version                                     | Note                                         |
 | ------ | ------------------------------------------- | -------------------------------------------- |
@@ -266,7 +266,7 @@ Note: Only first time
   ];
   ```
 
-## Backup Configurations
+## Backup
 
 - Database Backup
 
