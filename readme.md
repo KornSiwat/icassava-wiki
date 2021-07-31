@@ -40,7 +40,7 @@ This document contains all the necessary information to create icassava wiki. ðŸ
 | Vector       | [Comes with Mediawiki 1.36.1](https://www.mediawiki.org/wiki/Skin:Vector) | wfLoadSkin( 'Vector' ); <br> $wgDefaultSkin = "Vector";                  |
 | Minerva Neue | [20711d8](https://www.mediawiki.org/wiki/Skin:Minerva_Neue)               | wfLoadSkin( 'MinervaNeue' ); <br> $wgMFDefaultSkinClass = 'SkinMinerva'; |
 
-## Backup
+## Backup Tools
 
 | Name   | Version                                     | Note                                         |
 | ------ | ------------------------------------------- | -------------------------------------------- |
@@ -86,9 +86,9 @@ Note: Only first time
 
 - Current docker-compose.yaml file
 
-  ```
-  version: '3'
-  services:
+```
+version: '3'
+services:
     frontend:
         container_name: bpbiz_nginx
         restart: always
@@ -100,9 +100,9 @@ Note: Only first time
         depends_on:
             - php-wiki
         environment:
-            CERTBOT_EMAIL: YOUR EMAIL
+            CERTBOT_EMAIL: thanaphutbenz@gmail.com
             ENVSUBST_VARS: FQDN
-            FQDN: YOUR DOMAIN
+            FQDN: uknowcoe.com
         volumes:
             - ./conf.d:/etc/nginx/user.conf.d:ro
             - letsencrypt:/etc/letsencrypt
@@ -120,10 +120,10 @@ Note: Only first time
         ports:
             - 3306:3306
         environment:
-            - MYSQL_ROOT_PASSWORD=ROOTPASSWORD
-            - MYSQL_DATABASE=DBNAME
-            - MYSQL_USER=USER
-            - MYSQL_PASSWORD=PASSWORD
+            - MYSQL_ROOT_PASSWORD=uknow810
+            - MYSQL_DATABASE=uknow_db
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=uknow810
 
     php:
         container_name: bpbiz_php
@@ -139,7 +139,9 @@ Note: Only first time
     php-wiki:
         container_name: php-wiki
         restart: always
-        image: petekaik/php-fpm-mysqli
+        build:
+                context: php-wiki
+                dockerfile: Dockerfile
         volumes:
             - /var/www/html:/var/www/html
         expose:
@@ -147,9 +149,9 @@ Note: Only first time
         stdin_open: true
         tty: true
 
-  volumes:
+volumes:
     letsencrypt:
-  ```
+```
 
 - Current Nginx Config
 
