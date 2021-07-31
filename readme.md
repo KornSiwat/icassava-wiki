@@ -44,7 +44,7 @@ This document contains all the necessary information to create icassava wiki. ðŸ
 
 | Name   | Version                                     | Note                                         |
 | ------ | ------------------------------------------- | -------------------------------------------- |
-| gdrive | [any](https://github.com/prasmussen/gdrive) | For uploading database backup to googledrive |
+| gdrive | [any](https://github.com/prasmussen/gdrive) | After download follow my [installation guide](#GDrive) |
 
 # Installation
 
@@ -74,9 +74,20 @@ This document contains all the necessary information to create icassava wiki. ðŸ
 
 1. Download gdrive
 
-2. Run `gdrive about` then follow the login process to get the verification code
+2. Make it executable with: `chmod +x gdrive`
 
-3. Enter verification code
+3. Move it with: `mv gdrive /usr/bin`  
+
+4. Check whether its dependency is installed with `ldd /usr/bin/gdrive`
+
+    For libc.musl-x86_64.so.1 => not found run:    
+        ```
+        sudo apt-get install musl-dev && ln -s /usr/lib/x86_64-linux-musl/libc.so /lib/libc.musl-x86_64.so.1
+        ```
+
+5. Run `gdrive about` then follow the login process to get the verification code
+
+6. Enter verification code
 
 Note: Only first time
 
