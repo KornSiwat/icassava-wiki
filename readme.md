@@ -11,12 +11,12 @@ This document contains all the necessary information to create icassava wiki. ðŸ
 
 ### Core
 
-| Name            | Version                                                                   | Note                                                                             |
-| --------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| Mediawiki       | [1.36.1](https://releases.wikimedia.org/mediawiki/1.36/)                  | Not compatible with PHP 7.3.0 - 7.3.18 and 7.4.0 - 7.4.8 due to an upstream bug. |
-| php with mysqli | [Use this Docker Image](https://hub.docker.com/r/petekaik/php-fpm-mysqli) | Run php with docker                                                              |
-| Nginx           | Any Version (Assumed to be installed)                                     | Current configuration: [nginx.conf](#TODO add link here)                         |
-| MySql           | Any Version (Assumed to be installed)                                     |
+| Name      | Version                                                  | Note                                                                             |
+| --------- | -------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Mediawiki | [1.36.1](https://releases.wikimedia.org/mediawiki/1.36/) | Not compatible with PHP 7.3.0 - 7.3.18 and 7.4.0 - 7.4.8 due to an upstream bug. |
+| php       | [Use this Dockerfile](php-wiki/Dockerfile)               | this is identified as php-wiki in the current docker-compose.yml                 |
+| Nginx     | Any Version (Assumed to be installed)                    | Current configuration: [nginx.conf](#TODO add link here)                         |
+| MySql     | Any Version (Assumed to be installed)                    |
 
 ### Extensions
 
@@ -257,7 +257,7 @@ Note: Only first time
 - Mail (gmail) Setting in LocalSettings.php file
   ```
   $wgSMTP = [
-    'host' => 'ssl://smtp.gmail.com', // hostname of the email server
+    'host' => 'ssl://smtp.gmail.com', // hostname of 	the email server
     'IDHost' => 'gmail.com',
     'port' => 465,
     'username' => 'email', // user of the email account
